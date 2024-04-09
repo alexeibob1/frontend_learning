@@ -1,0 +1,224 @@
+/* GENERAL SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: #9C4A1A;;
+}
+/* END OF GENERAL SETTINGS */
+
+
+
+/* FONTS SETTINGS */
+@font-face {
+    font-family: "Barlow";
+    src: url('../fonts/Barlow-Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Barlow";
+    src: url('../fonts/Barlow-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Barlow";
+    src: url('../fonts/Barlow-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Barlow";
+    src: url('../fonts/Barlow-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+/* END OF FONTS SETTINGS */
+
+
+
+/* NAVIGATION PANEL SETTINGS */
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 40px;
+
+    background-color: #A78B71;
+}
+
+.nav-categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.btn {
+    padding: 5px 20px;
+
+    border-radius: 10px;
+    border: none;
+
+    color: white;
+
+    font-family: "Barlow";
+    font-weight: 300;
+}
+
+.btn--category {
+    background-color: #583E26;
+
+    font-size: 18px;
+}
+
+.btn--category:hover {
+    cursor: pointer;
+    background-color: #9C4A1A;
+    transition: all 0.5s ease;
+}
+
+.btn--category-selected {
+    background-color: #9C4A1A;
+}
+
+.btn--home {
+    /* margin-right: 20px; */
+    font-size: 22px;
+}
+
+.btn--home:hover {
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.5s ease;
+}
+/* END OF NAVIGATION PANEL SETTINGS */
+
+
+
+/* CARDS SECTION */
+.cards-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    grid-auto-flow: dense;
+
+    column-gap: 15px;
+    row-gap: 15px;
+
+    margin: 10px;
+}
+
+@keyframes slideIn {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+.card-container {
+    opacity: 0;
+
+    padding: 20px 25px;
+    border-radius: 15px;
+
+    background-color: #F7C815;
+}
+
+.visible-card {
+    animation: slideIn 0.5s ease-out;
+    opacity: 1;
+}
+
+.card-image { 
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-family: "Barlow";
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.card-description {
+    margin: 15px 0;
+    font-family: "Barlow";
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.card-categories-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+}
+
+.card-category {
+    padding: 5px 20px;
+    border-radius: 10px;
+
+    color: white;
+
+    font-family: "Barlow";
+    font-weight: 400;
+    font-size: 18px;
+
+    background-color: #583E26;
+}
+/* END OF CARDS SECTION */
+
+
+
+/* MEDIA QUERIES */
+@media screen and (320px <= width <= 670px)  {
+    .grid-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .cards-section {
+        grid-template-columns: repeat(auto-fill, minmax(310px, 400px));
+    }
+
+    .card-image {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .nav-header {
+        flex-direction: column;
+    }
+
+    .btn--home {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-header {
+        padding: 10px;
+    }
+}
+/* END OF MEDIA QUERIES */
